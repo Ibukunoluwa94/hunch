@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hunch - Healthy Meals</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-      
+      body{
+  font-family: 'Inter', sans-serif;
+}
       header {
     width: 100%; /* Full width */
     height: 80px; /* Typical height for a header */
@@ -59,101 +62,124 @@
 }
 
 footer {
-    background-color: #f0f5f1; /* Light background */
-    padding: 20px; /* Space around the footer */
-    display: flex;
-    flex-direction: column; /* Stack the sections */
-    gap: 20px; /* Add space between sections */
-    text-align: center; /* Center text for smaller screens */
+  background-color: #f9fff6; /* Light green background */
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .footer-container {
-    display: flex; /* Arrange sections side by side */
-    justify-content: space-between; /* Distribute space evenly */
-    align-items: flex-start; /* Align items to the top */
-    flex-wrap: wrap; /* Make it responsive */
-    gap: 20px; /* Space between sections */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* Responsive */
+  padding-bottom: 20px;
 }
 
-.footer-left, .footer-middle, .footer-right {
-    flex: 1; /* Make each section flexible */
-    min-width: 200px; /* Ensure sections don't get too small */
+.footer-left,
+.footer-middle,
+.footer-right,
+.footer-waitlist {
+  flex: 1;
+  min-width: 200px;
 }
 
 .footer-left img {
-    width: 70px; /* Size for the logo */
-    height: auto;
-    margin-bottom: 10px; /* Space below the logo */
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 10px;
+  color: #333;
+  background-color: #e9f9e8;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #c5e6c3;
+  color: #e94949;
 }
 
 .footer-middle ul {
-    list-style: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
+  list-style: none;
+  padding: 0;
+}
+
+.footer-middle ul li {
+  margin-bottom: 8px;
 }
 
 .footer-middle ul li a {
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Dark text color */
-    transition: color 0.3s; /* Smooth hover effect */
+  text-decoration: none;
+  color: #333;
 }
 
 .footer-middle ul li a:hover {
-    color: #007BFF; /* Add a hover effect */
+  color: #e94949;
 }
 
-.footer-right p, .footer-right a {
-    font-size: 14px; /* Smaller font size for contact info */
-    text-decoration: none; /* Remove underline from links */
-    color: #333;
+.footer-right p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.footer-right a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-right a:hover {
+  color: #e94949;
+}
+
+.footer-waitlist {
+  text-align: left;
+}
+
+.footer-waitlist h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-waitlist .waitlist-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #e94949;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.footer-waitlist .waitlist-btn:hover {
+  background-color: #c0392b;
 }
 
 .footer-bottom {
-    border-top: 1px solid #ccc; /* Line separating the bottom section */
-    padding-top: 10px; /* Space above the bottom content */
-    font-size: 14px; /* Smaller font size */
-    display: flex;
-    justify-content: space-between; /* Space between copyright and button */
-    align-items: center;
-    flex-wrap: wrap; /* Ensure responsiveness */
-    gap: 10px; /* Space between items on small screens */
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.waitlist-btn {
-    background-color: #E94949; /* Button background color */
-    color: #fff; /* Button text color */
-    padding: 8px 15px; /* Padding inside the button */
-    border: none; /* Remove borders */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor for button */
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s; /* Smooth hover effect */
+.footer-bottom p {
+  font-size: 14px;
+  color: #555;
 }
 
-.waitlist-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-        .footer-social {
-    display: flex; /* Arrange icons in a row */
-    justify-content: center; /* Center icons horizontally */
-    gap: 15px; /* Spacing between icons */
-    margin: 20px 0; /* Space above and below the social links */
-}
-
-.footer-social a {
-    display: inline-block; /* Allow clickable area around each icon */
-    width: 40px; /* Set icon size */
-    height: 40px;
-}
-
-.footer-social img {
-    width: 100%; /* Make the icon fill the link area */
-    height: auto;
-    transition: transform 0.3s; /* Smooth hover effect */
-}
-.footer-social a:hover img {
-    transform: scale(1.1); /* Slightly enlarge icon on hover */
-}
 
         
 
@@ -161,19 +187,22 @@ footer {
             header {
                 flex-direction: column;
                 align-items: flex-start;
+                margin-bottom: 30px;
             }
 
             nav ul {
                 flex-direction: column;
                 gap: 10px;
             }
-            .meals-section {
+       .meals-section {
         flex-direction: column; /* Stack cards vertically */
         gap: 15px; /* Reduce gap between cards */
         padding: 10px;
+        margin-top: 30px;
         margin-bottom: 30px;
         height: 100vh;
-        justify-content: space-around;
+        align-items: center;
+        justify-content: center;
     }
 
     .meal {
@@ -182,7 +211,7 @@ footer {
         grid-template-columns: 1fr 2fr; /* First column for <h3>, second for other content */
         gap: 10px;
         text-align: left;
-        padding: 10px;
+        
     }
 
     .meal h3 {
@@ -194,6 +223,36 @@ footer {
         grid-column: 2; /* Place other content in the second column */
         text-align: left; /* Align content inside the div */
     }
+    footer{
+      margin-top: 20px;
+    }
+    .footer-container {
+    flex-direction: column;
+    align-items: center; /* Center-align the content */
+    text-align: center; /* Center text alignment for better aesthetics */
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right,
+  .footer-waitlist {
+    flex: none;
+    width: 100%; /* Take full width */
+    margin-bottom: 20px; /* Add spacing between sections */
+  }
+
+  .footer-waitlist {
+    text-align: center; /* Center-align waitlist content */
+  }
+
+  .footer-waitlist .waitlist-btn {
+    display: block;
+    margin: 0 auto; /* Center the button */
+  }
+
+  .social-icons {
+    justify-content: center; /* Center social icons */
+  }
         }
     </style>
 </head>
@@ -234,51 +293,50 @@ footer {
 
     <footer>
         <div class="footer-container">
-            <!-- Left Section: Logo and About -->
-            <div class="footer-left">
-                <img src="Hunch-Logo 1.png" alt="Hunch Logo">
-                <div>
-                    <h4>Hunch</h4>
-                    <p>Healthy meals made for you.</p>
-                </div>
+          <!-- Left Section: Logo, Tagline, and Social Icons -->
+          <div class="footer-left">
+            <img src="Hunch-Logo 1.png" alt="Hunch Logo">
+            <div class="social-icons">
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
-    
-            <!-- Middle Section: Quick Links -->
-            <div class="footer-middle">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">About Us</a></li>
-                </ul>
-            </div>
-    
-            <!-- Right Section: Contact -->
-            <div class="footer-right">
-                <h4>Contact Us</h4>
-                <p>61, Westley St, Lagos, Nigeria</p>
-                <p>Email: <a href="mailto:info.hunch@gmail.com">info.hunch@gmail.com</a></p>
-                <p>Phone: <a href="tel:012348978">01-234-8978</a></p>
-            </div>
-        </div>
-    
-        <!-- Social Media Links -->
-        <div class="footer-social">
-            <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
-            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
-            <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
-            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
-        </div>
-        
-    
-        <!-- Bottom Section: Copyright -->
-        <div class="footer-bottom">
-            <p>&copy; 2024 Hunch. All rights reserved.</p>
+          </div>
+      
+          <!-- Middle Section: Quick Links -->
+          <div class="footer-middle">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">About Us</a></li>
+            </ul>
+          </div>
+      
+          <!-- Right Section: Contact Information -->
+          <div class="footer-right">
+            <h4>Contact</h4>
+            <p>61, Westley St, Lagos, Nigeria</p>
+            <p>Email: <a href="mailto:info.hunch@gmail.com">info.hunch@gmail.com</a></p>
+            <p>Phone: <a href="tel:012348978">01-234-8978</a></p>
+          </div>
+      
+          <!-- Separate Column: Waitlist Button -->
+          <div class="footer-waitlist">
+            <h4>Waitlist</h4>
             <a href="#" class="waitlist-btn">Join the Waitlist</a>
+          </div>
         </div>
-    </footer>
-    
+      
+        <div class="footer-bottom">
+          <p>&copy; 2024 Hunch. All rights reserved.</p>
+        </div>
+      </footer>
+      
+      
+      
    
 </body>
 </html>
