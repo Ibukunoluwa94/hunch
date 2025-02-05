@@ -8,9 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
+
+
       body{
-  font-family: 'Inter', sans-serif;
-}
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden; /* Prevents scrolling and hides overflow */
+      
+   }
       header {
     width: 100%; /* Full width */
     height: 80px; /* Typical height for a header */
@@ -50,140 +56,198 @@
     display: flex;
     flex-direction: column; /* Stack content inside the card */
     align-items: flex-start;
+   
 }
 
 .meal h3 {
-    background-color:  #FBFFFA; /* Light blue background */
-    color: #333; /* Text color */
-    padding: 10px; /* Space around the text */
-    border-radius: 5px; /* Optional: Rounded corners */
-    margin: 0; /* Remove default margin */
-    text-align: center; /* Center text for bigger screens */
+    grid-column: 1 / -1; /* Make it span across all columns */
+    text-align: center; /* Center the text */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    width: 100%;
+    height: 100%;
+    background-color: #FBFFFA; /* Keep background color */
+    padding: 0;
+    border-radius: 5px;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19.2px;
 }
 
 footer {
-  background-color: #f9fff6; /* Light green background */
-  padding: 40px 20px;
-  text-align: center;
+    background-color: #F7FEF5;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  flex-wrap: wrap; /* Responsive */
-  padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.footer-left,
-.footer-middle,
-.footer-right,
-.footer-waitlist {
-  flex: 1;
-  min-width: 200px;
+/* Left Section */
+.footer-left {
+    flex: 1;
+    text-align: left;
 }
 
-.footer-left img {
-  width: 300px;
-  margin-bottom: 10px;
+.footer-logo {
+    
+    margin-bottom: 10px;
+    width: 407px;
+height: 161px;
+gap: 0px;
+opacity: 0px;
+
 }
 
-.social-icons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 10px;
+.social-icons img {
+    width: 24px;
+    margin-right: 10px;
+    
 }
 
-.social-icons a {
-  font-size: 10px;
-  color: #333;
-  background-color: #e9f9e8;
-  padding: 10px;
-  border-radius: 50%;
-  transition: background-color 0.3s, color 0.3s;
+/* Right Section - Three Columns Aligned Right */
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    text-align: left;
 }
 
-.social-icons a:hover {
-  background-color: #c5e6c3;
-  color: #e94949;
+.footer-column {
+    flex: 1;
 }
 
-.footer-middle ul {
-  list-style: none;
-  padding: 0;
+.quick-links ul {
+    list-style: none;
+    padding: 0;
 }
 
-.footer-middle ul li {
-  margin-bottom: 8px;
+.quick-links ul li {
+    margin-bottom: 8px;
 }
 
-.footer-middle ul li a {
-  text-decoration: none;
-  color: #333;
+.quick-links ul li a {
+    text-decoration: none;
+    color: black;
 }
 
-.footer-middle ul li a:hover {
-  color: #e94949;
+.waitlist-btn {
+    background-color: #D9534F;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.footer-right p {
-  margin: 8px 0;
-  color: #333;
+/* Bottom Section */
+.footer-bottom-wrapper {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center content horizontally */
+    gap: 20px; /* Adjust spacing between hr and text */
+    width: 100%;
 }
 
-.footer-right a {
-  text-decoration: none;
-  color: #333;
-}
-
-.footer-right a:hover {
-  color: #e94949;
-}
-
-.footer-waitlist {
-  text-align: left;
-}
-
-.footer-waitlist h4 {
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-.footer-waitlist .waitlist-btn {
-  display: inline-block;
-  padding: 8px 15px;
-  background-color: #e94949;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.footer-waitlist .waitlist-btn:hover {
-  background-color: #c0392b;
+.footer-bottom-wrapper hr {
+    flex-grow: 1; /* Makes the <hr> expand */
+    border: none;
+    border-top: 1px solid #000; /* Adjust color as needed */
 }
 
 .footer-bottom {
-  border-top: 1px solid #ddd;
-  margin-top: 20px;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.footer-bottom p {
-  font-size: 14px;
-  color: #555;
+    white-space: nowrap; /* Prevents text from breaking into multiple lines */
+    font-size: 14px; /* Adjust font size */
 }
 
 
-        
+
+@media (min-width: 769px) {
+    .meals-section {
+        width: 951px; /* Fixed width */
+        height: 239px; /* Fixed height */
+        display: flex;
+        flex-direction: row; /* Arrange cards horizontally */
+        justify-content: space-between; /* Ensure even spacing */
+        align-items: center; /* Center align items */
+        gap: 0px; /* No extra spacing */
+        margin: 201px auto 0 auto; /* Centering */
+        position: relative;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .meal {
+        width: 300px; /* Fixed width */
+        height: 239px; /* Fixed height */
+        background-color: transparent; /* Remove background from the whole card */
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        overflow: hidden; /* Prevent content overflow */
+    }
+
+    .meal h3 {
+        flex: 0 0 60px; /* Ensure it takes full width at the top */
+        background-color: #FBFFFA;
+        color: #333;
+        padding: 15px;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+        font-family: 'Noto Serif JP', serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19.2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .meal div {
+        flex: 1; /* Take up remaining space */
+        background-color: #f0f5f1;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Ensure content fits properly */
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .meal img {
+        max-width: 80px; /* Prevent image from overflowing */
+        height: auto;
+    }
+
+    .meal p {
+        font-size: 12px; /* Reduce font size slightly */
+        line-height: 1.4;
+        margin: 0;
+        padding: 0 10px;
+    }
+}
+
+
 
         @media (max-width: 768px) {
+          
             header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -196,10 +260,12 @@ footer {
             }
        .meals-section {
         flex-direction: column; /* Stack cards vertically */
-        gap: 15px; /* Reduce gap between cards */
-        padding: 10px;
-        margin-top: 30px;
-        margin-bottom: 30px;
+        gap: 0; /* Reduce gap between cards */
+        padding-right: 0;
+       margin-left: 0;
+       margin-right: 0;
+        margin-top: 100px;
+        margin-bottom: 100px;
         height: 100vh;
         align-items: center;
         justify-content: center;
@@ -211,49 +277,62 @@ footer {
         grid-template-columns: 1fr 2fr; /* First column for <h3>, second for other content */
         gap: 10px;
         text-align: left;
+        align-items: stretch;
+        
+        
         
     }
 
     .meal h3 {
         grid-column: 1; /* Place <h3> in the first column */
         text-align: left; /* Align <h3> to the left */
+          display: flex;
+         align-items: center; /* Center text vertically */
+         justify-content: flex-start; /* Keep it aligned to the left */
+        height: 100%;   
+        padding: 10px;
+        display: flex;
     }
 
     .meal div {
         grid-column: 2; /* Place other content in the second column */
-        text-align: left; /* Align content inside the div */
-    }
-    footer{
-      margin-top: 20px;
-    }
-    .footer-container {
+       /*  text-align: left; Align content inside the div */
+       display: flex;
     flex-direction: column;
-    align-items: center; /* Center-align the content */
-    text-align: center; /* Center text alignment for better aesthetics */
-  }
+    justify-content: center; /* Ensures content is aligned properly */
+    height: 100%; /* Make it match h3 height */
+    padding: 12px 24px;
+    gap: 12px;
+    }
+   
+    .footer-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align everything to the left */
+    }
 
-  .footer-left,
-  .footer-middle,
-  .footer-right,
-  .footer-waitlist {
-    flex: none;
-    width: 100%; /* Take full width */
-    margin-bottom: 20px; /* Add spacing between sections */
-  }
+    .footer-right {
+        flex-direction: column;
+        align-items: flex-start; /* Ensure columns align left */
+        gap: 20px;
+        width: 100%;
+    }
 
-  .footer-waitlist {
-    text-align: center; /* Center-align waitlist content */
-  }
+    .footer-column {
+        width: 100%; /* Take full width */
+        text-align: left;
+    }
 
-  .footer-waitlist .waitlist-btn {
-    display: block;
-    margin: 0 auto; /* Center the button */
-  }
+    .footer-bottom {
+        text-align: left; /* Align footer bottom text to the left */
+        padding-left: 20px;
+    }
 
-  .social-icons {
-    justify-content: center; /* Center social icons */
-  }
-        }
+    .footer-bottom hr {
+        width: 100%; /* Keep full width */
+    }
+
+}
+        
     </style>
 </head>
 <body>
@@ -293,50 +372,52 @@ footer {
 
     <footer>
         <div class="footer-container">
-          <!-- Left Section: Logo, Tagline, and Social Icons -->
-          <div class="footer-left">
-            <img src="Hunch-Logo 1.png" alt="Hunch Logo">
-            <div class="social-icons">
-              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <!-- Left Section -->
+            <div class="footer-left">
+                <img src="Hunch-Logo 1.png" alt="Hunch Logo" class="footer-logo">
+                
+                <div class="social-icons">
+                    <img src="1161953_instagram_icon.png" alt="Instagram">
+                    <img src="104452_linkedin_icon.png" alt="LinkedIn">
+                    <img src="104501_twitter_bird_icon.png" alt="X">
+                    <img src="104498_facebook_icon.png" alt="Facebook">
+                </div>
             </div>
-          </div>
-      
-          <!-- Middle Section: Quick Links -->
-          <div class="footer-middle">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Service</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">About Us</a></li>
-            </ul>
-          </div>
-      
-          <!-- Right Section: Contact Information -->
-          <div class="footer-right">
-            <h4>Contact</h4>
-            <p>61, Westley St, Lagos, Nigeria</p>
-            <p>Email: <a href="mailto:info.hunch@gmail.com">info.hunch@gmail.com</a></p>
-            <p>Phone: <a href="tel:012348978">01-234-8978</a></p>
-          </div>
-      
-          <!-- Separate Column: Waitlist Button -->
-          <div class="footer-waitlist">
-            <h4>Waitlist</h4>
-            <a href="#" class="waitlist-btn">Join the Waitlist</a>
-          </div>
+    
+            <!-- Right Section (Three Columns) -->
+            <div class="footer-right">
+                <div class="footer-column quick-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p>61, Westley St, Lagos, Nigeria</p>
+                    <p>info.hunch@gmail.com</p>
+                    <p>01-234-8978</p>
+                </div>
+    
+                <div class="footer-column">
+                    <h4>Waitlist</h4>
+                    <button class="waitlist-btn">Join the Waitlist</button>
+                </div>
+            </div>
         </div>
-      
-        <div class="footer-bottom">
-          <p>&copy; 2024 Hunch. All rights reserved.</p>
+    
+        <!-- Bottom Section with HR in the middle -->
+        <div class="footer-bottom-wrapper">
+            <hr>
+            <span class="footer-bottom">© All rights reserved, Hunch 2024</span>
+            <hr>
         </div>
-      </footer>
-      
-      
-      
+    </footer>
+    
    
 </body>
 </html>
