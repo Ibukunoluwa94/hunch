@@ -79,7 +79,7 @@
 footer {
     background-color: #F7FEF5;
     padding: 40px 0;
-    font-family: Arial, sans-serif;
+    
 }
 
 .footer-container {
@@ -107,11 +107,27 @@ opacity: 0px;
 
 }
 
-.social-icons img {
-    width: 24px;
-    margin-right: 10px;
-    
+.social-icons {
+    display: flex;
+    gap: 10px; /* Spacing between icons */
 }
+
+.social-icons img {
+    width: 24px; /* Icon size */
+    height: 24px;
+    background-color:rgba(18, 71, 5, 0.15);
+    border-radius: 50%; /* Makes it circular */
+    padding: 8px; /* Ensures proper spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure icons are visible */
+.social-icons img {
+    filter: none; /* Remove invert effect */
+}
+
 
 /* Right Section - Three Columns Aligned Right */
 .footer-right {
@@ -124,7 +140,10 @@ opacity: 0px;
 .footer-column {
     flex: 1;
 }
-
+.footer-column h4{
+    color: rgba(58, 107, 46, 1);
+;
+}
 .quick-links ul {
     list-style: none;
     padding: 0;
@@ -285,10 +304,10 @@ opacity: 0px;
 
     .meal h3 {
         grid-column: 1; /* Place <h3> in the first column */
-        text-align: left; /* Align <h3> to the left */
+        text-align: center; /* Align <h3> to the left */
           display: flex;
          align-items: center; /* Center text vertically */
-         justify-content: flex-start; /* Keep it aligned to the left */
+         justify-content: center; /* Keep it aligned to the left */
         height: 100%;   
         padding: 10px;
         display: flex;
